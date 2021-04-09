@@ -1,0 +1,37 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+wrapper {
+    gradleVersion '6.8.3'
+}
+
+dependencies {
+    implementation 'org.springframework:spring-context:5.3.4'
+    implementation 'com.lightstreamer:ls-adapter-inprocess:7.3.0'
+}
+
+jar {
+    exclude 'adapters.xml'
+}
+
+task deploy(type: Copy) {
+    into "$buildDir/spring-example"
+
+    from (jar) {
+        into 'lib'
+    }
+
+    from (configurations.runtimeClasspath) {
+        exclude 'ls-adapter-inprocess-7.3.0'
+        into 'lib'
+    }
+    
+    from (sourceSets.main.resources) {
+        include 'adapters.xml'
+    }
+}

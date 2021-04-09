@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not remove this line. File tag: adapters_conf-APV-20180228. -->
+
+<!-- 
+    This is the configuration file of the WELCOME Adapter Set,
+    pre-deployed into Lightstreamer Server and used by the
+    demos embedded in the Welcome page.
+    Please refer to the generic template for full details and comments:
+    `DOCS-SDKs/sdk_adapter_java_inprocess/doc/adapter_conf_template/adapters.xml`
+-->
+
+<adapters_conf id="SPRING-EXAMPLE">
+
+    <metadata_adapter_initialised_first>Y</metadata_adapter_initialised_first>
+
+    <metadata_provider>
+        <install_dir>metadata</install_dir>
+        <adapter_class>com.lightstreamer.examples.spring.factory.MetadataProviderFactory</adapter_class>
+
+        <!--  The name of the Metadata Adapter implementation as specified in the Spring bean definition -->
+        <param name="metadata_adapter">myMetadataAdapter</param>
+
+    </metadata_provider>
+
+    <data_provider name="DATA1">
+        <adapter_class>com.lightstreamer.examples.spring.factory.DataProviderFactory</adapter_class>
+
+        <!--  The name of the Data Adapter implementation as specified in the Spring bean definition -->
+        <param name="data_adapter">myDataAdapter1</param>
+    </data_provider>
+
+    <data_provider name="DATA2">
+        <adapter_class>com.lightstreamer.examples.spring.factory.DataProviderFactory</adapter_class>
+
+        <!--  The name of the Data Adapter implementation as specified in the Spring bean definition -->
+        <param name="data_adapter">myDataAdapter2</param>
+    </data_provider>
+
+</adapters_conf>
