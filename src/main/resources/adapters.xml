@@ -14,7 +14,6 @@
     <metadata_adapter_initialised_first>Y</metadata_adapter_initialised_first>
 
     <metadata_provider>
-        <install_dir>metadata</install_dir>
         <adapter_class>com.lightstreamer.examples.spring.factory.MetadataProviderFactory</adapter_class>
 
         <!--  The name of the Metadata Adapter implementation as specified in the Spring bean definition -->
